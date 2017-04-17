@@ -1,7 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>Code coverage report for node-npmtest-consolidate/consolidate/lib/consolidate.js</title>
+<html lang="en"><head>
+    <title>Code coverage report for node-npmtest-consolidate/node_modules/consolidate/lib/consolidate.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -194,7 +192,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-consolidate">npmtest-consolidate (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-consolidate/consolidate/lib/consolidate.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-consolidate/node_modules/consolidate/lib/consolidate.js</span></h1>
     <h2>
         
         Statements: <span class="metric">18.15% <small>(106 / 584)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -210,11 +208,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-consolidate/consolidate/lib/</a> &#187; consolidate.js</div>
+    <div class="path"><a href="../../../../index.html">All files</a> » <a href="index.html">node-npmtest-consolidate/node_modules/consolidate/lib/</a> » consolidate.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tr><td class="line-count">1
+<tbody><tr><td class="line-count">1
 2
 3
 4
@@ -3229,8 +3227,8 @@ var requires = {};
  * @api public
  */
 &nbsp;
-exports.clearCache = <span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >  cacheStore = {};</span>
+exports.clearCache = <span class="fstat-no" title="function not covered">function(){</span>
+<span class="cstat-no" title="statement not covered">  cacheStore = {};</span>
 };
 &nbsp;
 /**
@@ -3243,20 +3241,20 @@ exports.clearCache = <span class="fstat-no" title="function not covered" >functi
  * @api private
  */
 &nbsp;
-<span class="fstat-no" title="function not covered" >function cache(options, compiled) {</span>
+<span class="fstat-no" title="function not covered">function cache(options, compiled) {</span>
   // cachable
-<span class="cstat-no" title="statement not covered" >  if (compiled &amp;&amp; options.filename &amp;&amp; options.cache) {</span>
-<span class="cstat-no" title="statement not covered" >    delete readCache[options.filename];</span>
-<span class="cstat-no" title="statement not covered" >    cacheStore[options.filename] = compiled;</span>
-<span class="cstat-no" title="statement not covered" >    return compiled;</span>
+<span class="cstat-no" title="statement not covered">  if (compiled &amp;&amp; options.filename &amp;&amp; options.cache) {</span>
+<span class="cstat-no" title="statement not covered">    delete readCache[options.filename];</span>
+<span class="cstat-no" title="statement not covered">    cacheStore[options.filename] = compiled;</span>
+<span class="cstat-no" title="statement not covered">    return compiled;</span>
   }
 &nbsp;
   // check cache
-<span class="cstat-no" title="statement not covered" >  if (options.filename &amp;&amp; options.cache) {</span>
-<span class="cstat-no" title="statement not covered" >    return cacheStore[options.filename];</span>
+<span class="cstat-no" title="statement not covered">  if (options.filename &amp;&amp; options.cache) {</span>
+<span class="cstat-no" title="statement not covered">    return cacheStore[options.filename];</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return compiled;</span>
+<span class="cstat-no" title="statement not covered">  return compiled;</span>
 }
 &nbsp;
 /**
@@ -3269,20 +3267,20 @@ exports.clearCache = <span class="fstat-no" title="function not covered" >functi
  * @api private
  */
 &nbsp;
-<span class="fstat-no" title="function not covered" >function read(path, options, fn) {</span>
-<span class="cstat-no" title="statement not covered" >  var str = readCache[path];</span>
-<span class="cstat-no" title="statement not covered" >  var cached = options.cache &amp;&amp; str &amp;&amp; typeof str === 'string';</span>
+<span class="fstat-no" title="function not covered">function read(path, options, fn) {</span>
+<span class="cstat-no" title="statement not covered">  var str = readCache[path];</span>
+<span class="cstat-no" title="statement not covered">  var cached = options.cache &amp;&amp; str &amp;&amp; typeof str === 'string';</span>
 &nbsp;
   // cached (only if cached is a string and not a compiled template function)
-<span class="cstat-no" title="statement not covered" >  if (cached) <span class="cstat-no" title="statement not covered" >return fn(null, str);</span></span>
+<span class="cstat-no" title="statement not covered">  if (cached) <span class="cstat-no" title="statement not covered">return fn(null, str);</span></span>
 &nbsp;
   // read
-<span class="cstat-no" title="statement not covered" >  fs.readFile(path, 'utf8', <span class="fstat-no" title="function not covered" >function(err, str){</span></span>
-<span class="cstat-no" title="statement not covered" >    if (err) <span class="cstat-no" title="statement not covered" >return fn(err);</span></span>
+<span class="cstat-no" title="statement not covered">  fs.readFile(path, 'utf8', <span class="fstat-no" title="function not covered">function(err, str){</span></span>
+<span class="cstat-no" title="statement not covered">    if (err) <span class="cstat-no" title="statement not covered">return fn(err);</span></span>
     // remove extraneous utf8 BOM marker
-<span class="cstat-no" title="statement not covered" >    str = str.replace(/^\uFEFF/, '');</span>
-<span class="cstat-no" title="statement not covered" >    if (options.cache) <span class="cstat-no" title="statement not covered" >readCache[path] = str;</span></span>
-<span class="cstat-no" title="statement not covered" >    fn(null, str);</span>
+<span class="cstat-no" title="statement not covered">    str = str.replace(/^\uFEFF/, '');</span>
+<span class="cstat-no" title="statement not covered">    if (options.cache) <span class="cstat-no" title="statement not covered">readCache[path] = str;</span></span>
+<span class="cstat-no" title="statement not covered">    fn(null, str);</span>
   });
 }
 &nbsp;
@@ -3296,38 +3294,38 @@ exports.clearCache = <span class="fstat-no" title="function not covered" >functi
  * @api private
  */
 &nbsp;
-<span class="fstat-no" title="function not covered" >function readPartials(path, options, fn) {</span>
-<span class="cstat-no" title="statement not covered" >  if (!options.partials) <span class="cstat-no" title="statement not covered" >return fn();</span></span>
-<span class="cstat-no" title="statement not covered" >  var partials = options.partials;</span>
-<span class="cstat-no" title="statement not covered" >  var keys = Object.keys(partials);</span>
+<span class="fstat-no" title="function not covered">function readPartials(path, options, fn) {</span>
+<span class="cstat-no" title="statement not covered">  if (!options.partials) <span class="cstat-no" title="statement not covered">return fn();</span></span>
+<span class="cstat-no" title="statement not covered">  var partials = options.partials;</span>
+<span class="cstat-no" title="statement not covered">  var keys = Object.keys(partials);</span>
 &nbsp;
-<span class="fstat-no" title="function not covered" >  function next(index) {</span>
-<span class="cstat-no" title="statement not covered" >    if (index === keys.length) <span class="cstat-no" title="statement not covered" >return fn(null);</span></span>
-<span class="cstat-no" title="statement not covered" >    var key = keys[index];</span>
-<span class="cstat-no" title="statement not covered" >    var file = join(dirname(path), partials[key] + extname(path));</span>
-<span class="cstat-no" title="statement not covered" >    read(file, options, <span class="fstat-no" title="function not covered" >function(err, str){</span></span>
-<span class="cstat-no" title="statement not covered" >      if (err) <span class="cstat-no" title="statement not covered" >return fn(err);</span></span>
-<span class="cstat-no" title="statement not covered" >      options.partials[key] = str;</span>
-<span class="cstat-no" title="statement not covered" >      next(++index);</span>
+<span class="fstat-no" title="function not covered">  function next(index) {</span>
+<span class="cstat-no" title="statement not covered">    if (index === keys.length) <span class="cstat-no" title="statement not covered">return fn(null);</span></span>
+<span class="cstat-no" title="statement not covered">    var key = keys[index];</span>
+<span class="cstat-no" title="statement not covered">    var file = join(dirname(path), partials[key] + extname(path));</span>
+<span class="cstat-no" title="statement not covered">    read(file, options, <span class="fstat-no" title="function not covered">function(err, str){</span></span>
+<span class="cstat-no" title="statement not covered">      if (err) <span class="cstat-no" title="statement not covered">return fn(err);</span></span>
+<span class="cstat-no" title="statement not covered">      options.partials[key] = str;</span>
+<span class="cstat-no" title="statement not covered">      next(++index);</span>
     });
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  next(0);</span>
+<span class="cstat-no" title="statement not covered">  next(0);</span>
 }
 &nbsp;
 &nbsp;
 /**
  * promisify
  */
-<span class="fstat-no" title="function not covered" >function promisify(fn, exec) {</span>
-<span class="cstat-no" title="statement not covered" >  return new Promise(<span class="fstat-no" title="function not covered" >function (res, rej) {</span></span>
-<span class="cstat-no" title="statement not covered" >    fn = fn || <span class="fstat-no" title="function not covered" >function (err, html) {</span></span>
-<span class="cstat-no" title="statement not covered" >      if (err) {</span>
-<span class="cstat-no" title="statement not covered" >        return rej(err);</span>
+<span class="fstat-no" title="function not covered">function promisify(fn, exec) {</span>
+<span class="cstat-no" title="statement not covered">  return new Promise(<span class="fstat-no" title="function not covered">function (res, rej) {</span></span>
+<span class="cstat-no" title="statement not covered">    fn = fn || <span class="fstat-no" title="function not covered">function (err, html) {</span></span>
+<span class="cstat-no" title="statement not covered">      if (err) {</span>
+<span class="cstat-no" title="statement not covered">        return rej(err);</span>
       }
-<span class="cstat-no" title="statement not covered" >      res(html);</span>
+<span class="cstat-no" title="statement not covered">      res(html);</span>
     };
-<span class="cstat-no" title="statement not covered" >    exec(fn);</span>
+<span class="cstat-no" title="statement not covered">    exec(fn);</span>
   });
 }
 &nbsp;
@@ -3337,18 +3335,18 @@ exports.clearCache = <span class="fstat-no" title="function not covered" >functi
  */
 &nbsp;
 function fromStringRenderer(name) {
-  return <span class="fstat-no" title="function not covered" >function(path, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >    options.filename = path;</span>
+  return <span class="fstat-no" title="function not covered">function(path, options, fn){</span>
+<span class="cstat-no" title="statement not covered">    options.filename = path;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return promisify(fn, <span class="fstat-no" title="function not covered" >function(fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >      readPartials(path, options, <span class="fstat-no" title="function not covered" >function (err) {</span></span>
-<span class="cstat-no" title="statement not covered" >        if (err) <span class="cstat-no" title="statement not covered" >return fn(err);</span></span>
-<span class="cstat-no" title="statement not covered" >        if (cache(options)) {</span>
-<span class="cstat-no" title="statement not covered" >          exports[name].render('', options, fn);</span>
+<span class="cstat-no" title="statement not covered">    return promisify(fn, <span class="fstat-no" title="function not covered">function(fn) {</span></span>
+<span class="cstat-no" title="statement not covered">      readPartials(path, options, <span class="fstat-no" title="function not covered">function (err) {</span></span>
+<span class="cstat-no" title="statement not covered">        if (err) <span class="cstat-no" title="statement not covered">return fn(err);</span></span>
+<span class="cstat-no" title="statement not covered">        if (cache(options)) {</span>
+<span class="cstat-no" title="statement not covered">          exports[name].render('', options, fn);</span>
         } else {
-<span class="cstat-no" title="statement not covered" >          read(path, options, <span class="fstat-no" title="function not covered" >function(err, str){</span></span>
-<span class="cstat-no" title="statement not covered" >            if (err) <span class="cstat-no" title="statement not covered" >return fn(err);</span></span>
-<span class="cstat-no" title="statement not covered" >            exports[name].render(str, options, fn);</span>
+<span class="cstat-no" title="statement not covered">          read(path, options, <span class="fstat-no" title="function not covered">function(err, str){</span></span>
+<span class="cstat-no" title="statement not covered">            if (err) <span class="cstat-no" title="statement not covered">return fn(err);</span></span>
+<span class="cstat-no" title="statement not covered">            exports[name].render(str, options, fn);</span>
           });
         }
       });
@@ -3374,57 +3372,57 @@ exports.liquid = fromStringRenderer('liquid');
  * `includeDir` will also become a local.
  */
 &nbsp;
-exports.liquid.render = <span class="fstat-no" title="function not covered" >function(str, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.liquid || (requires.liquid = require('tinyliquid'));</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var context = engine.newContext();</span>
-<span class="cstat-no" title="statement not covered" >      var k;</span>
+exports.liquid.render = <span class="fstat-no" title="function not covered">function(str, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.liquid || (requires.liquid = require('tinyliquid'));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var context = engine.newContext();</span>
+<span class="cstat-no" title="statement not covered">      var k;</span>
 &nbsp;
       /**
        * Note that there's a bug in the library that doesn't allow us to pass
        * the locals to newContext(), hence looping through the keys:
        */
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (options.locals){</span>
-<span class="cstat-no" title="statement not covered" >        for (k in options.locals){</span>
-<span class="cstat-no" title="statement not covered" >          context.setLocals(k, options.locals[k]);</span>
+<span class="cstat-no" title="statement not covered">      if (options.locals){</span>
+<span class="cstat-no" title="statement not covered">        for (k in options.locals){</span>
+<span class="cstat-no" title="statement not covered">          context.setLocals(k, options.locals[k]);</span>
         }
-<span class="cstat-no" title="statement not covered" >        delete options.locals;</span>
+<span class="cstat-no" title="statement not covered">        delete options.locals;</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (options.meta){</span>
-<span class="cstat-no" title="statement not covered" >        context.setLocals('page', options.meta);</span>
-<span class="cstat-no" title="statement not covered" >        delete options.meta;</span>
+<span class="cstat-no" title="statement not covered">      if (options.meta){</span>
+<span class="cstat-no" title="statement not covered">        context.setLocals('page', options.meta);</span>
+<span class="cstat-no" title="statement not covered">        delete options.meta;</span>
       }
 &nbsp;
       /**
        * Add any defined filters:
        */
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (options.filters){</span>
-<span class="cstat-no" title="statement not covered" >        for (k in options.filters){</span>
-<span class="cstat-no" title="statement not covered" >          context.setFilter(k, options.filters[k]);</span>
+<span class="cstat-no" title="statement not covered">      if (options.filters){</span>
+<span class="cstat-no" title="statement not covered">        for (k in options.filters){</span>
+<span class="cstat-no" title="statement not covered">          context.setFilter(k, options.filters[k]);</span>
         }
-<span class="cstat-no" title="statement not covered" >        delete options.filters;</span>
+<span class="cstat-no" title="statement not covered">        delete options.filters;</span>
       }
 &nbsp;
       /**
        * Set up a callback for the include directory:
        */
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      var includeDir = options.includeDir || process.cwd();</span>
+<span class="cstat-no" title="statement not covered">      var includeDir = options.includeDir || process.cwd();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      context.onInclude(<span class="fstat-no" title="function not covered" >function (name, callback) {</span></span>
-<span class="cstat-no" title="statement not covered" >        var extname = path.extname(name) ? '' : '.liquid';</span>
-<span class="cstat-no" title="statement not covered" >        var filename = path.resolve(includeDir, name + extname);</span>
+<span class="cstat-no" title="statement not covered">      context.onInclude(<span class="fstat-no" title="function not covered">function (name, callback) {</span></span>
+<span class="cstat-no" title="statement not covered">        var extname = path.extname(name) ? '' : '.liquid';</span>
+<span class="cstat-no" title="statement not covered">        var filename = path.resolve(includeDir, name + extname);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        fs.readFile(filename, {encoding: 'utf8'}, <span class="fstat-no" title="function not covered" >function (err, data){</span></span>
-<span class="cstat-no" title="statement not covered" >          if (err) <span class="cstat-no" title="statement not covered" >return callback(err);</span></span>
-<span class="cstat-no" title="statement not covered" >          callback(null, engine.parse(data));</span>
+<span class="cstat-no" title="statement not covered">        fs.readFile(filename, {encoding: 'utf8'}, <span class="fstat-no" title="function not covered">function (err, data){</span></span>
+<span class="cstat-no" title="statement not covered">          if (err) <span class="cstat-no" title="statement not covered">return callback(err);</span></span>
+<span class="cstat-no" title="statement not covered">          callback(null, engine.parse(data));</span>
         });
       });
-<span class="cstat-no" title="statement not covered" >      delete options.includeDir;</span>
+<span class="cstat-no" title="statement not covered">      delete options.includeDir;</span>
 &nbsp;
       /**
        * The custom tag functions need to have their results pushed back
@@ -3432,41 +3430,41 @@ exports.liquid.render = <span class="fstat-no" title="function not covered" >fun
        * callback:
        */
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      var compileOptions = {</span>
+<span class="cstat-no" title="statement not covered">      var compileOptions = {</span>
         customTags: {}
       };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (options.customTags){</span>
-<span class="cstat-no" title="statement not covered" >        var tagFunctions = options.customTags;</span>
+<span class="cstat-no" title="statement not covered">      if (options.customTags){</span>
+<span class="cstat-no" title="statement not covered">        var tagFunctions = options.customTags;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        for (k in options.customTags){</span>
+<span class="cstat-no" title="statement not covered">        for (k in options.customTags){</span>
           /*Tell jshint there's no problem with having this function in the loop */
           /*jshint -W083 */
-<span class="cstat-no" title="statement not covered" >          compileOptions.customTags[k] = <span class="fstat-no" title="function not covered" >function (context, name, body){</span></span>
-<span class="cstat-no" title="statement not covered" >            var tpl = tagFunctions[name](body.trim());</span>
-<span class="cstat-no" title="statement not covered" >            context.astStack.push(engine.parse(tpl));</span>
+<span class="cstat-no" title="statement not covered">          compileOptions.customTags[k] = <span class="fstat-no" title="function not covered">function (context, name, body){</span></span>
+<span class="cstat-no" title="statement not covered">            var tpl = tagFunctions[name](body.trim());</span>
+<span class="cstat-no" title="statement not covered">            context.astStack.push(engine.parse(tpl));</span>
           };
           /*jshint +W083 */
         }
-<span class="cstat-no" title="statement not covered" >        delete options.customTags;</span>
+<span class="cstat-no" title="statement not covered">        delete options.customTags;</span>
       }
 &nbsp;
       /**
        * Now anything left in `options` becomes a local:
        */
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      for (k in options){</span>
-<span class="cstat-no" title="statement not covered" >        context.setLocals(k, options[k]);</span>
+<span class="cstat-no" title="statement not covered">      for (k in options){</span>
+<span class="cstat-no" title="statement not covered">        context.setLocals(k, options[k]);</span>
       }
 &nbsp;
       /**
        * Finally, execute the template:
        */
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(context) || cache(context, engine.compile(str, compileOptions));</span>
-<span class="cstat-no" title="statement not covered" >      tmpl(context, fn);</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(context) || cache(context, engine.compile(str, compileOptions));</span>
+<span class="cstat-no" title="statement not covered">      tmpl(context, fn);</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -3475,26 +3473,26 @@ exports.liquid.render = <span class="fstat-no" title="function not covered" >fun
  * Jade support.
  */
 &nbsp;
-exports.jade = <span class="fstat-no" title="function not covered" >function(path, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.jade;</span>
-<span class="cstat-no" title="statement not covered" >    if (!engine) {</span>
-<span class="cstat-no" title="statement not covered" >      try {</span>
-<span class="cstat-no" title="statement not covered" >        engine = requires.jade = require('jade');</span>
+exports.jade = <span class="fstat-no" title="function not covered">function(path, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.jade;</span>
+<span class="cstat-no" title="statement not covered">    if (!engine) {</span>
+<span class="cstat-no" title="statement not covered">      try {</span>
+<span class="cstat-no" title="statement not covered">        engine = requires.jade = require('jade');</span>
       } catch (err) {
-<span class="cstat-no" title="statement not covered" >        try {</span>
-<span class="cstat-no" title="statement not covered" >          engine = requires.jade = require('then-jade');</span>
+<span class="cstat-no" title="statement not covered">        try {</span>
+<span class="cstat-no" title="statement not covered">          engine = requires.jade = require('then-jade');</span>
         } catch (otherError) {
-<span class="cstat-no" title="statement not covered" >          throw err;</span>
+<span class="cstat-no" title="statement not covered">          throw err;</span>
         }
       }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine.compileFile(path, options));</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, tmpl(options));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine.compileFile(path, options));</span>
+<span class="cstat-no" title="statement not covered">      fn(null, tmpl(options));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -3503,26 +3501,26 @@ exports.jade = <span class="fstat-no" title="function not covered" >function(pat
  * Jade string support.
  */
 &nbsp;
-exports.jade.render = <span class="fstat-no" title="function not covered" >function(str, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.jade;</span>
-<span class="cstat-no" title="statement not covered" >    if (!engine) {</span>
-<span class="cstat-no" title="statement not covered" >      try {</span>
-<span class="cstat-no" title="statement not covered" >        engine = requires.jade = require('jade');</span>
+exports.jade.render = <span class="fstat-no" title="function not covered">function(str, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.jade;</span>
+<span class="cstat-no" title="statement not covered">    if (!engine) {</span>
+<span class="cstat-no" title="statement not covered">      try {</span>
+<span class="cstat-no" title="statement not covered">        engine = requires.jade = require('jade');</span>
       } catch (err) {
-<span class="cstat-no" title="statement not covered" >        try {</span>
-<span class="cstat-no" title="statement not covered" >          engine = requires.jade = require('then-jade');</span>
+<span class="cstat-no" title="statement not covered">        try {</span>
+<span class="cstat-no" title="statement not covered">          engine = requires.jade = require('then-jade');</span>
         } catch (otherError) {
-<span class="cstat-no" title="statement not covered" >          throw err;</span>
+<span class="cstat-no" title="statement not covered">          throw err;</span>
         }
       }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine.compile(str, options));</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, tmpl(options));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine.compile(str, options));</span>
+<span class="cstat-no" title="statement not covered">      fn(null, tmpl(options));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -3537,42 +3535,42 @@ exports.dust = fromStringRenderer('dust');
  * Dust string support.
  */
 &nbsp;
-exports.dust.render = <span class="fstat-no" title="function not covered" >function(str, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function(fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.dust;</span>
-<span class="cstat-no" title="statement not covered" >    if (!engine) {</span>
-<span class="cstat-no" title="statement not covered" >      try {</span>
-<span class="cstat-no" title="statement not covered" >        engine = requires.dust = require('dust');</span>
+exports.dust.render = <span class="fstat-no" title="function not covered">function(str, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function(fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.dust;</span>
+<span class="cstat-no" title="statement not covered">    if (!engine) {</span>
+<span class="cstat-no" title="statement not covered">      try {</span>
+<span class="cstat-no" title="statement not covered">        engine = requires.dust = require('dust');</span>
       } catch (err) {
-<span class="cstat-no" title="statement not covered" >        try {</span>
-<span class="cstat-no" title="statement not covered" >          engine = requires.dust = require('dustjs-helpers');</span>
+<span class="cstat-no" title="statement not covered">        try {</span>
+<span class="cstat-no" title="statement not covered">          engine = requires.dust = require('dustjs-helpers');</span>
         } catch (err) {
-<span class="cstat-no" title="statement not covered" >          engine = requires.dust = require('dustjs-linkedin');</span>
+<span class="cstat-no" title="statement not covered">          engine = requires.dust = require('dustjs-linkedin');</span>
         }
       }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var ext = 'dust';</span>
-<span class="cstat-no" title="statement not covered" >    var views = '.';</span>
+<span class="cstat-no" title="statement not covered">    var ext = 'dust';</span>
+<span class="cstat-no" title="statement not covered">    var views = '.';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (options) {</span>
-<span class="cstat-no" title="statement not covered" >      if (options.ext) <span class="cstat-no" title="statement not covered" >ext = options.ext;</span></span>
-<span class="cstat-no" title="statement not covered" >      if (options.views) <span class="cstat-no" title="statement not covered" >views = options.views;</span></span>
-<span class="cstat-no" title="statement not covered" >      if (options.settings &amp;&amp; options.settings.views) <span class="cstat-no" title="statement not covered" >views = options.settings.views;</span></span>
+<span class="cstat-no" title="statement not covered">    if (options) {</span>
+<span class="cstat-no" title="statement not covered">      if (options.ext) <span class="cstat-no" title="statement not covered">ext = options.ext;</span></span>
+<span class="cstat-no" title="statement not covered">      if (options.views) <span class="cstat-no" title="statement not covered">views = options.views;</span></span>
+<span class="cstat-no" title="statement not covered">      if (options.settings &amp;&amp; options.settings.views) <span class="cstat-no" title="statement not covered">views = options.settings.views;</span></span>
     }
-<span class="cstat-no" title="statement not covered" >    if (!options || (options &amp;&amp; !options.cache)) <span class="cstat-no" title="statement not covered" >engine.cache = {};</span></span>
+<span class="cstat-no" title="statement not covered">    if (!options || (options &amp;&amp; !options.cache)) <span class="cstat-no" title="statement not covered">engine.cache = {};</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    engine.onLoad = <span class="fstat-no" title="function not covered" >function(path, callback){</span></span>
-<span class="cstat-no" title="statement not covered" >      if ('' === extname(path)) <span class="cstat-no" title="statement not covered" >path += '.' + ext;</span></span>
-<span class="cstat-no" title="statement not covered" >      if ('/' !== path[0]) <span class="cstat-no" title="statement not covered" >path = views + '/' + path;</span></span>
-<span class="cstat-no" title="statement not covered" >      read(path, options, callback);</span>
+<span class="cstat-no" title="statement not covered">    engine.onLoad = <span class="fstat-no" title="function not covered">function(path, callback){</span></span>
+<span class="cstat-no" title="statement not covered">      if ('' === extname(path)) <span class="cstat-no" title="statement not covered">path += '.' + ext;</span></span>
+<span class="cstat-no" title="statement not covered">      if ('/' !== path[0]) <span class="cstat-no" title="statement not covered">path = views + '/' + path;</span></span>
+<span class="cstat-no" title="statement not covered">      read(path, options, callback);</span>
     };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine.compileFn(str));</span>
-<span class="cstat-no" title="statement not covered" >      tmpl(options, fn);</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine.compileFn(str));</span>
+<span class="cstat-no" title="statement not covered">      tmpl(options, fn);</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -3587,17 +3585,17 @@ exports.swig = fromStringRenderer('swig');
  * Swig string support.
  */
 &nbsp;
-exports.swig.render = <span class="fstat-no" title="function not covered" >function(str, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function(fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.swig || (requires.swig = require('swig'));</span>
+exports.swig.render = <span class="fstat-no" title="function not covered">function(str, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function(fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.swig || (requires.swig = require('swig'));</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      if(options.cache === true) <span class="cstat-no" title="statement not covered" >options.cache = 'memory';</span></span>
-<span class="cstat-no" title="statement not covered" >      engine.setDefaults({ cache: options.cache });</span>
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine.compile(str, options));</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, tmpl(options));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      if(options.cache === true) <span class="cstat-no" title="statement not covered">options.cache = 'memory';</span></span>
+<span class="cstat-no" title="statement not covered">      engine.setDefaults({ cache: options.cache });</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine.compile(str, options));</span>
+<span class="cstat-no" title="statement not covered">      fn(null, tmpl(options));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -3612,14 +3610,14 @@ exports.atpl = fromStringRenderer('atpl');
  * Atpl string support.
  */
 &nbsp;
-exports.atpl.render = <span class="fstat-no" title="function not covered" >function(str, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function(fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.atpl || (requires.atpl = require('atpl'));</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine.compile(str, options));</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, tmpl(options));</span>
+exports.atpl.render = <span class="fstat-no" title="function not covered">function(str, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function(fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.atpl || (requires.atpl = require('atpl'));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine.compile(str, options));</span>
+<span class="cstat-no" title="statement not covered">      fn(null, tmpl(options));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -3634,14 +3632,14 @@ exports.liquor = fromStringRenderer('liquor');
  * Liquor string support.
  */
 &nbsp;
-exports.liquor.render = <span class="fstat-no" title="function not covered" >function(str, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function(fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.liquor || (requires.liquor = require('liquor'));</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine.compile(str, options));</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, tmpl(options));</span>
+exports.liquor.render = <span class="fstat-no" title="function not covered">function(str, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function(fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.liquor || (requires.liquor = require('liquor'));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine.compile(str, options));</span>
+<span class="cstat-no" title="statement not covered">      fn(null, tmpl(options));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -3656,17 +3654,17 @@ exports.twig = fromStringRenderer('twig');
  * Twig string support.
  */
 &nbsp;
-exports.twig.render = <span class="fstat-no" title="function not covered" >function(str, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function(fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.twig || (requires.twig = require('twig').twig);</span>
-<span class="cstat-no" title="statement not covered" >    var templateData = {</span>
+exports.twig.render = <span class="fstat-no" title="function not covered">function(str, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function(fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.twig || (requires.twig = require('twig').twig);</span>
+<span class="cstat-no" title="statement not covered">    var templateData = {</span>
       data: str
     };
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(templateData) || cache(templateData, engine(templateData));</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, tmpl.render(options));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(templateData) || cache(templateData, engine(templateData));</span>
+<span class="cstat-no" title="statement not covered">      fn(null, tmpl.render(options));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -3681,14 +3679,14 @@ exports.ejs = fromStringRenderer('ejs');
  * EJS string support.
  */
 &nbsp;
-exports.ejs.render = <span class="fstat-no" title="function not covered" >function(str, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.ejs || (requires.ejs = require('ejs'));</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine.compile(str, options));</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, tmpl(options));</span>
+exports.ejs.render = <span class="fstat-no" title="function not covered">function(str, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.ejs || (requires.ejs = require('ejs'));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine.compile(str, options));</span>
+<span class="cstat-no" title="statement not covered">      fn(null, tmpl(options));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -3704,13 +3702,13 @@ exports.eco = fromStringRenderer('eco');
  * Eco string support.
  */
 &nbsp;
-exports.eco.render = <span class="fstat-no" title="function not covered" >function(str, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function(fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.eco || (requires.eco = require('eco'));</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, engine.render(str, options));</span>
+exports.eco.render = <span class="fstat-no" title="function not covered">function(str, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function(fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.eco || (requires.eco = require('eco'));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      fn(null, engine.render(str, options));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -3725,16 +3723,16 @@ exports.jazz = fromStringRenderer('jazz');
  * Jazz string support.
  */
 &nbsp;
-exports.jazz.render = <span class="fstat-no" title="function not covered" >function(str, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function(fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.jazz || (requires.jazz = require('jazz'));</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine.compile(str, options));</span>
-<span class="cstat-no" title="statement not covered" >      tmpl.eval(options, <span class="fstat-no" title="function not covered" >function(str){</span></span>
-<span class="cstat-no" title="statement not covered" >        fn(null, str);</span>
+exports.jazz.render = <span class="fstat-no" title="function not covered">function(str, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function(fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.jazz || (requires.jazz = require('jazz'));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine.compile(str, options));</span>
+<span class="cstat-no" title="statement not covered">      tmpl.eval(options, <span class="fstat-no" title="function not covered">function(str){</span></span>
+<span class="cstat-no" title="statement not covered">        fn(null, str);</span>
       });
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -3749,14 +3747,14 @@ exports.jqtpl = fromStringRenderer('jqtpl');
  * JQTPL string support.
  */
 &nbsp;
-exports.jqtpl.render = <span class="fstat-no" title="function not covered" >function(str, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function(fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.jqtpl || (requires.jqtpl = require('jqtpl'));</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      engine.template(str, str);</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, engine.tmpl(str, options));</span>
+exports.jqtpl.render = <span class="fstat-no" title="function not covered">function(str, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function(fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.jqtpl || (requires.jqtpl = require('jqtpl'));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      engine.template(str, str);</span>
+<span class="cstat-no" title="statement not covered">      fn(null, engine.tmpl(str, options));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -3771,14 +3769,14 @@ exports.haml = fromStringRenderer('haml');
  * Haml string support.
  */
 &nbsp;
-exports.haml.render = <span class="fstat-no" title="function not covered" >function(str, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function(fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.haml || (requires.haml = require('hamljs'));</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      options.locals = options;</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, engine.render(str, options).trimLeft());</span>
+exports.haml.render = <span class="fstat-no" title="function not covered">function(str, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function(fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.haml || (requires.haml = require('hamljs'));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      options.locals = options;</span>
+<span class="cstat-no" title="statement not covered">      fn(null, engine.render(str, options).trimLeft());</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -3793,14 +3791,14 @@ exports.hamlet = fromStringRenderer('hamlet');
  * Hamlet string support.
  */
 &nbsp;
-exports.hamlet.render = <span class="fstat-no" title="function not covered" >function(str, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.hamlet || (requires.hamlet = require('hamlet'));</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      options.locals = options;</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, engine.render(str, options).trimLeft());</span>
+exports.hamlet.render = <span class="fstat-no" title="function not covered">function(str, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.hamlet || (requires.hamlet = require('hamlet'));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      options.locals = options;</span>
+<span class="cstat-no" title="statement not covered">      fn(null, engine.render(str, options).trimLeft());</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -3809,10 +3807,10 @@ exports.hamlet.render = <span class="fstat-no" title="function not covered" >fun
  * Whiskers support.
  */
 &nbsp;
-exports.whiskers = <span class="fstat-no" title="function not covered" >function(path, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.whiskers || (requires.whiskers = require('whiskers'));</span>
-<span class="cstat-no" title="statement not covered" >    engine.__express(path, options, fn);</span>
+exports.whiskers = <span class="fstat-no" title="function not covered">function(path, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.whiskers || (requires.whiskers = require('whiskers'));</span>
+<span class="cstat-no" title="statement not covered">    engine.__express(path, options, fn);</span>
   });
 };
 &nbsp;
@@ -3820,13 +3818,13 @@ exports.whiskers = <span class="fstat-no" title="function not covered" >function
  * Whiskers string support.
  */
 &nbsp;
-exports.whiskers.render = <span class="fstat-no" title="function not covered" >function(str, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function(fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.whiskers || (requires.whiskers = require('whiskers'));</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, engine.render(str, options));</span>
+exports.whiskers.render = <span class="fstat-no" title="function not covered">function(str, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function(fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.whiskers || (requires.whiskers = require('whiskers'));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      fn(null, engine.render(str, options));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -3841,14 +3839,14 @@ exports['haml-coffee'] = fromStringRenderer('haml-coffee');
  * Coffee-HAML string support.
  */
 &nbsp;
-exports['haml-coffee'].render = <span class="fstat-no" title="function not covered" >function(str, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function(fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires['haml-coffee'] || (requires['haml-coffee'] = require('haml-coffee'));</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine.compile(str, options));</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, tmpl(options));</span>
+exports['haml-coffee'].render = <span class="fstat-no" title="function not covered">function(str, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function(fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires['haml-coffee'] || (requires['haml-coffee'] = require('haml-coffee'));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine.compile(str, options));</span>
+<span class="cstat-no" title="statement not covered">      fn(null, tmpl(options));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -3863,14 +3861,14 @@ exports.hogan = fromStringRenderer('hogan');
  * Hogan string support.
  */
 &nbsp;
-exports.hogan.render = <span class="fstat-no" title="function not covered" >function(str, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.hogan || (requires.hogan = require('hogan.js'));</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine.compile(str, options));</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, tmpl.render(options, options.partials));</span>
+exports.hogan.render = <span class="fstat-no" title="function not covered">function(str, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.hogan || (requires.hogan = require('hogan.js'));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine.compile(str, options));</span>
+<span class="cstat-no" title="statement not covered">      fn(null, tmpl.render(options, options.partials));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -3885,14 +3883,14 @@ exports.templayed = fromStringRenderer('templayed');
  * templayed.js string support.
  */
 &nbsp;
-exports.templayed.render = <span class="fstat-no" title="function not covered" >function(str, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.templayed || (requires.templayed = require('templayed'));</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine(str));</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, tmpl(options));</span>
+exports.templayed.render = <span class="fstat-no" title="function not covered">function(str, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.templayed || (requires.templayed = require('templayed'));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine(str));</span>
+<span class="cstat-no" title="statement not covered">      fn(null, tmpl(options));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -3907,20 +3905,20 @@ exports.handlebars = fromStringRenderer('handlebars');
  * Handlebars string support.
  */
 &nbsp;
-exports.handlebars.render = <span class="fstat-no" title="function not covered" >function(str, options, fn) {</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function(fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.handlebars || (requires.handlebars = require('handlebars'));</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      for (var partial in options.partials) {</span>
-<span class="cstat-no" title="statement not covered" >        engine.registerPartial(partial, options.partials[partial]);</span>
+exports.handlebars.render = <span class="fstat-no" title="function not covered">function(str, options, fn) {</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function(fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.handlebars || (requires.handlebars = require('handlebars'));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      for (var partial in options.partials) {</span>
+<span class="cstat-no" title="statement not covered">        engine.registerPartial(partial, options.partials[partial]);</span>
       }
-<span class="cstat-no" title="statement not covered" >      for (var helper in options.helpers) {</span>
-<span class="cstat-no" title="statement not covered" >        engine.registerHelper(helper, options.helpers[helper]);</span>
+<span class="cstat-no" title="statement not covered">      for (var helper in options.helpers) {</span>
+<span class="cstat-no" title="statement not covered">        engine.registerHelper(helper, options.helpers[helper]);</span>
       }
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine.compile(str, options));</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, tmpl(options));</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine.compile(str, options));</span>
+<span class="cstat-no" title="statement not covered">      fn(null, tmpl(options));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -3935,14 +3933,14 @@ exports.underscore = fromStringRenderer('underscore');
  * Underscore string support.
  */
 &nbsp;
-exports.underscore.render = <span class="fstat-no" title="function not covered" >function(str, options, fn) {</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function(fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.underscore || (requires.underscore = require('underscore'));</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine.template(str, null, options));</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, tmpl(options).replace(/\n$/, ''));</span>
+exports.underscore.render = <span class="fstat-no" title="function not covered">function(str, options, fn) {</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function(fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.underscore || (requires.underscore = require('underscore'));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine.template(str, null, options));</span>
+<span class="cstat-no" title="statement not covered">      fn(null, tmpl(options).replace(/\n$/, ''));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -3958,14 +3956,14 @@ exports.lodash = fromStringRenderer('lodash');
  * Lodash string support.
  */
 &nbsp;
-exports.lodash.render = <span class="fstat-no" title="function not covered" >function(str, options, fn) {</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.lodash || (requires.lodash = require('lodash'));</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine.template(str, options));</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, tmpl(options).replace(/\n$/, ''));</span>
+exports.lodash.render = <span class="fstat-no" title="function not covered">function(str, options, fn) {</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.lodash || (requires.lodash = require('lodash'));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine.template(str, options));</span>
+<span class="cstat-no" title="statement not covered">      fn(null, tmpl(options).replace(/\n$/, ''));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -3975,26 +3973,26 @@ exports.lodash.render = <span class="fstat-no" title="function not covered" >fun
  * Pug support. (formerly Jade)
  */
 &nbsp;
-exports.pug = <span class="fstat-no" title="function not covered" >function(path, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.pug;</span>
-<span class="cstat-no" title="statement not covered" >    if (!engine) {</span>
-<span class="cstat-no" title="statement not covered" >      try {</span>
-<span class="cstat-no" title="statement not covered" >        engine = requires.pug = require('pug');</span>
+exports.pug = <span class="fstat-no" title="function not covered">function(path, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.pug;</span>
+<span class="cstat-no" title="statement not covered">    if (!engine) {</span>
+<span class="cstat-no" title="statement not covered">      try {</span>
+<span class="cstat-no" title="statement not covered">        engine = requires.pug = require('pug');</span>
       } catch (err) {
-<span class="cstat-no" title="statement not covered" >        try {</span>
-<span class="cstat-no" title="statement not covered" >          engine = requires.pug = require('then-pug');</span>
+<span class="cstat-no" title="statement not covered">        try {</span>
+<span class="cstat-no" title="statement not covered">          engine = requires.pug = require('then-pug');</span>
         } catch (otherError) {
-<span class="cstat-no" title="statement not covered" >          throw err;</span>
+<span class="cstat-no" title="statement not covered">          throw err;</span>
         }
       }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine.compileFile(path, options));</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, tmpl(options));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine.compileFile(path, options));</span>
+<span class="cstat-no" title="statement not covered">      fn(null, tmpl(options));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -4003,26 +4001,26 @@ exports.pug = <span class="fstat-no" title="function not covered" >function(path
  * Pug string support.
  */
 &nbsp;
-exports.pug.render = <span class="fstat-no" title="function not covered" >function(str, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.pug;</span>
-<span class="cstat-no" title="statement not covered" >    if (!engine) {</span>
-<span class="cstat-no" title="statement not covered" >      try {</span>
-<span class="cstat-no" title="statement not covered" >        engine = requires.pug = require('pug');</span>
+exports.pug.render = <span class="fstat-no" title="function not covered">function(str, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.pug;</span>
+<span class="cstat-no" title="statement not covered">    if (!engine) {</span>
+<span class="cstat-no" title="statement not covered">      try {</span>
+<span class="cstat-no" title="statement not covered">        engine = requires.pug = require('pug');</span>
       } catch (err) {
-<span class="cstat-no" title="statement not covered" >        try {</span>
-<span class="cstat-no" title="statement not covered" >          engine = requires.pug = require('then-pug');</span>
+<span class="cstat-no" title="statement not covered">        try {</span>
+<span class="cstat-no" title="statement not covered">          engine = requires.pug = require('then-pug');</span>
         } catch (otherError) {
-<span class="cstat-no" title="statement not covered" >          throw err;</span>
+<span class="cstat-no" title="statement not covered">          throw err;</span>
         }
       }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine.compile(str, options));</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, tmpl(options));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine.compile(str, options));</span>
+<span class="cstat-no" title="statement not covered">      fn(null, tmpl(options));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -4038,17 +4036,17 @@ exports.qejs = fromStringRenderer('qejs');
  * QEJS string support.
  */
 &nbsp;
-exports.qejs.render = <span class="fstat-no" title="function not covered" >function (str, options, fn) {</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var engine = requires.qejs || (requires.qejs = require('qejs'));</span>
-<span class="cstat-no" title="statement not covered" >      engine.render(str, options).then(<span class="fstat-no" title="function not covered" >function (result) {</span></span>
-<span class="cstat-no" title="statement not covered" >        fn(null, result);</span>
-      }, <span class="fstat-no" title="function not covered" >function (err) {</span>
-<span class="cstat-no" title="statement not covered" >        fn(err);</span>
+exports.qejs.render = <span class="fstat-no" title="function not covered">function (str, options, fn) {</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var engine = requires.qejs || (requires.qejs = require('qejs'));</span>
+<span class="cstat-no" title="statement not covered">      engine.render(str, options).then(<span class="fstat-no" title="function not covered">function (result) {</span></span>
+<span class="cstat-no" title="statement not covered">        fn(null, result);</span>
+      }, <span class="fstat-no" title="function not covered">function (err) {</span>
+<span class="cstat-no" title="statement not covered">        fn(err);</span>
       }).done();
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -4064,14 +4062,14 @@ exports.walrus = fromStringRenderer('walrus');
  * Walrus string support.
  */
 &nbsp;
-exports.walrus.render = <span class="fstat-no" title="function not covered" >function (str, options, fn) {</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.walrus || (requires.walrus = require('walrus'));</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine.parse(str));</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, tmpl.compile(options));</span>
+exports.walrus.render = <span class="fstat-no" title="function not covered">function (str, options, fn) {</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.walrus || (requires.walrus = require('walrus'));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine.parse(str));</span>
+<span class="cstat-no" title="statement not covered">      fn(null, tmpl.compile(options));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -4086,13 +4084,13 @@ exports.mustache = fromStringRenderer('mustache');
  * Mustache string support.
  */
 &nbsp;
-exports.mustache.render = <span class="fstat-no" title="function not covered" >function(str, options, fn) {</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.mustache || (requires.mustache = require('mustache'));</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, engine.to_html(str, options, options.partials));</span>
+exports.mustache.render = <span class="fstat-no" title="function not covered">function(str, options, fn) {</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.mustache || (requires.mustache = require('mustache'));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      fn(null, engine.to_html(str, options, options.partials));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -4101,15 +4099,15 @@ exports.mustache.render = <span class="fstat-no" title="function not covered" >f
  * Just support.
  */
 &nbsp;
-exports.just = <span class="fstat-no" title="function not covered" >function(path, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function(fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.just;</span>
-<span class="cstat-no" title="statement not covered" >    if (!engine) {</span>
-<span class="cstat-no" title="statement not covered" >      var JUST = require('just');</span>
-<span class="cstat-no" title="statement not covered" >      engine = requires.just = new JUST();</span>
+exports.just = <span class="fstat-no" title="function not covered">function(path, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function(fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.just;</span>
+<span class="cstat-no" title="statement not covered">    if (!engine) {</span>
+<span class="cstat-no" title="statement not covered">      var JUST = require('just');</span>
+<span class="cstat-no" title="statement not covered">      engine = requires.just = new JUST();</span>
     }
-<span class="cstat-no" title="statement not covered" >    engine.configure({ useCache: options.cache });</span>
-<span class="cstat-no" title="statement not covered" >    engine.render(path, options, fn);</span>
+<span class="cstat-no" title="statement not covered">    engine.configure({ useCache: options.cache });</span>
+<span class="cstat-no" title="statement not covered">    engine.render(path, options, fn);</span>
   });
 };
 &nbsp;
@@ -4117,11 +4115,11 @@ exports.just = <span class="fstat-no" title="function not covered" >function(pat
  * Just string support.
  */
 &nbsp;
-exports.just.render = <span class="fstat-no" title="function not covered" >function(str, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var JUST = require('just');</span>
-<span class="cstat-no" title="statement not covered" >    var engine = new JUST({ root: { page: str }});</span>
-<span class="cstat-no" title="statement not covered" >    engine.render('page', options, fn);</span>
+exports.just.render = <span class="fstat-no" title="function not covered">function(str, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var JUST = require('just');</span>
+<span class="cstat-no" title="statement not covered">    var engine = new JUST({ root: { page: str }});</span>
+<span class="cstat-no" title="statement not covered">    engine.render('page', options, fn);</span>
   });
 };
 &nbsp;
@@ -4129,15 +4127,15 @@ exports.just.render = <span class="fstat-no" title="function not covered" >funct
  * ECT support.
  */
 &nbsp;
-exports.ect = <span class="fstat-no" title="function not covered" >function(path, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.ect;</span>
-<span class="cstat-no" title="statement not covered" >    if (!engine) {</span>
-<span class="cstat-no" title="statement not covered" >      var ECT = require('ect');</span>
-<span class="cstat-no" title="statement not covered" >      engine = requires.ect = new ECT(options);</span>
+exports.ect = <span class="fstat-no" title="function not covered">function(path, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.ect;</span>
+<span class="cstat-no" title="statement not covered">    if (!engine) {</span>
+<span class="cstat-no" title="statement not covered">      var ECT = require('ect');</span>
+<span class="cstat-no" title="statement not covered">      engine = requires.ect = new ECT(options);</span>
     }
-<span class="cstat-no" title="statement not covered" >    engine.configure({ cache: options.cache });</span>
-<span class="cstat-no" title="statement not covered" >    engine.render(path, options, fn);</span>
+<span class="cstat-no" title="statement not covered">    engine.configure({ cache: options.cache });</span>
+<span class="cstat-no" title="statement not covered">    engine.render(path, options, fn);</span>
   });
 };
 &nbsp;
@@ -4145,11 +4143,11 @@ exports.ect = <span class="fstat-no" title="function not covered" >function(path
  * ECT string support.
  */
 &nbsp;
-exports.ect.render = <span class="fstat-no" title="function not covered" >function(str, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var ECT = require('ect');</span>
-<span class="cstat-no" title="statement not covered" >    var engine = new ECT({ root: { page: str }});</span>
-<span class="cstat-no" title="statement not covered" >    engine.render('page', options, fn);</span>
+exports.ect.render = <span class="fstat-no" title="function not covered">function(str, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var ECT = require('ect');</span>
+<span class="cstat-no" title="statement not covered">    var engine = new ECT({ root: { page: str }});</span>
+<span class="cstat-no" title="statement not covered">    engine.render('page', options, fn);</span>
   });
 };
 &nbsp;
@@ -4163,14 +4161,14 @@ exports.mote = fromStringRenderer('mote');
  * mote string support.
  */
 &nbsp;
-exports.mote.render = <span class="fstat-no" title="function not covered" >function(str, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.mote || (requires.mote = require('mote'));</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine.compile(str));</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, tmpl(options));</span>
+exports.mote.render = <span class="fstat-no" title="function not covered">function(str, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.mote || (requires.mote = require('mote'));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine.compile(str));</span>
+<span class="cstat-no" title="statement not covered">      fn(null, tmpl(options));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -4179,10 +4177,10 @@ exports.mote.render = <span class="fstat-no" title="function not covered" >funct
  * Toffee support.
  */
 &nbsp;
-exports.toffee = <span class="fstat-no" title="function not covered" >function(path, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var toffee = requires.toffee || (requires.toffee = require('toffee'));</span>
-<span class="cstat-no" title="statement not covered" >    toffee.__consolidate_engine_render(path, options, fn);</span>
+exports.toffee = <span class="fstat-no" title="function not covered">function(path, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var toffee = requires.toffee || (requires.toffee = require('toffee'));</span>
+<span class="cstat-no" title="statement not covered">    toffee.__consolidate_engine_render(path, options, fn);</span>
   });
 };
 &nbsp;
@@ -4190,13 +4188,13 @@ exports.toffee = <span class="fstat-no" title="function not covered" >function(p
  * Toffee string support.
  */
 &nbsp;
-exports.toffee.render = <span class="fstat-no" title="function not covered" >function(str, options, fn) {</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.toffee || (requires.toffee = require('toffee'));</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      engine.str_render(str, options,fn);</span>
+exports.toffee.render = <span class="fstat-no" title="function not covered">function(str, options, fn) {</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.toffee || (requires.toffee = require('toffee'));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      engine.str_render(str, options,fn);</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -4211,14 +4209,14 @@ exports.dot = fromStringRenderer('dot');
  * doT string support.
  */
 &nbsp;
-exports.dot.render = <span class="fstat-no" title="function not covered" >function (str, options, fn) {</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.dot || (requires.dot = require('dot'));</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine.compile(str, options &amp;&amp; options._def));</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, tmpl(options));</span>
+exports.dot.render = <span class="fstat-no" title="function not covered">function (str, options, fn) {</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.dot || (requires.dot = require('dot'));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine.compile(str, options &amp;&amp; options._def));</span>
+<span class="cstat-no" title="statement not covered">      fn(null, tmpl(options));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -4233,14 +4231,14 @@ exports.bracket = fromStringRenderer('bracket');
  * bracket string support.
  */
 &nbsp;
-exports.bracket.render = <span class="fstat-no" title="function not covered" >function (str, options, fn) {</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.bracket || (requires.bracket = require('bracket-template'));</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine.default.compile(str));</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, tmpl(options));</span>
+exports.bracket.render = <span class="fstat-no" title="function not covered">function (str, options, fn) {</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.bracket || (requires.bracket = require('bracket-template'));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine.default.compile(str));</span>
+<span class="cstat-no" title="statement not covered">      fn(null, tmpl(options));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -4255,33 +4253,33 @@ exports.ractive = fromStringRenderer('ractive');
  * Ractive string support.
  */
 &nbsp;
-exports.ractive.render = <span class="fstat-no" title="function not covered" >function(str, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.ractive || (requires.ractive = require('ractive'));</span>
+exports.ractive.render = <span class="fstat-no" title="function not covered">function(str, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.ractive || (requires.ractive = require('ractive'));</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    var template = cache(options) || cache(options, engine.parse(str));</span>
-<span class="cstat-no" title="statement not covered" >    options.template = template;</span>
+<span class="cstat-no" title="statement not covered">    var template = cache(options) || cache(options, engine.parse(str));</span>
+<span class="cstat-no" title="statement not covered">    options.template = template;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (options.data === null || options.data === undefined)</span>
+<span class="cstat-no" title="statement not covered">    if (options.data === null || options.data === undefined)</span>
     {
-<span class="cstat-no" title="statement not covered" >      var extend = (requires.extend || (requires.extend = require('util')._extend));</span>
+<span class="cstat-no" title="statement not covered">      var extend = (requires.extend || (requires.extend = require('util')._extend));</span>
 &nbsp;
       // Shallow clone the options object
-<span class="cstat-no" title="statement not covered" >      options.data = extend({}, options);</span>
+<span class="cstat-no" title="statement not covered">      options.data = extend({}, options);</span>
 &nbsp;
       // Remove consolidate-specific properties from the clone
-<span class="cstat-no" title="statement not covered" >      var i, length;</span>
-<span class="cstat-no" title="statement not covered" >      var properties = ["template", "filename", "cache", "partials"];</span>
-<span class="cstat-no" title="statement not covered" >      for (i = 0, length = properties.length; i &lt; length; i++) {</span>
-<span class="cstat-no" title="statement not covered" >        var property = properties[i];</span>
-<span class="cstat-no" title="statement not covered" >        delete options.data[property];</span>
+<span class="cstat-no" title="statement not covered">      var i, length;</span>
+<span class="cstat-no" title="statement not covered">      var properties = ["template", "filename", "cache", "partials"];</span>
+<span class="cstat-no" title="statement not covered">      for (i = 0, length = properties.length; i &lt; length; i++) {</span>
+<span class="cstat-no" title="statement not covered">        var property = properties[i];</span>
+<span class="cstat-no" title="statement not covered">        delete options.data[property];</span>
       }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, new engine(options).toHTML());</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      fn(null, new engine(options).toHTML());</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -4296,22 +4294,22 @@ exports.nunjucks = fromStringRenderer('nunjucks');
  * Nunjucks string support.
  */
 &nbsp;
-exports.nunjucks.render = <span class="fstat-no" title="function not covered" >function (str, options, fn) {</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
+exports.nunjucks.render = <span class="fstat-no" title="function not covered">function (str, options, fn) {</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      var engine = options.nunjucksEnv || requires.nunjucks || (requires.nunjucks = require('nunjucks'));</span>
+<span class="cstat-no" title="statement not covered">      var engine = options.nunjucksEnv || requires.nunjucks || (requires.nunjucks = require('nunjucks'));</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      var env = engine;</span>
+<span class="cstat-no" title="statement not covered">      var env = engine;</span>
 &nbsp;
       // deprecated fallback support for express
       // &lt;https://github.com/tj/consolidate.js/pull/152&gt;
       // &lt;https://github.com/tj/consolidate.js/pull/224&gt;
-<span class="cstat-no" title="statement not covered" >      if (options.settings &amp;&amp; options.settings.views)</span>
-<span class="cstat-no" title="statement not covered" >        env = engine.configure(options.settings.views);</span>
-      else <span class="cstat-no" title="statement not covered" >if (options.nunjucks &amp;&amp; options.nunjucks.configure)</span>
-<span class="cstat-no" title="statement not covered" >        env = engine.configure.apply(engine, options.nunjucks.configure);</span>
+<span class="cstat-no" title="statement not covered">      if (options.settings &amp;&amp; options.settings.views)</span>
+<span class="cstat-no" title="statement not covered">        env = engine.configure(options.settings.views);</span>
+      else <span class="cstat-no" title="statement not covered">if (options.nunjucks &amp;&amp; options.nunjucks.configure)</span>
+<span class="cstat-no" title="statement not covered">        env = engine.configure.apply(engine, options.nunjucks.configure);</span>
 &nbsp;
       //
       // because `renderString` does not initiate loaders
@@ -4339,17 +4337,17 @@ exports.nunjucks.render = <span class="fstat-no" title="function not covered" >f
 &nbsp;
       // so instead we simply check if we passed a custom loader
       // otherwise we create a simple file based loader
-<span class="cstat-no" title="statement not covered" >      if (options.loader) {</span>
-<span class="cstat-no" title="statement not covered" >        env = new engine.Environment(options.loader);</span>
-      } else <span class="cstat-no" title="statement not covered" >if (options.settings &amp;&amp; options.settings.views) {</span>
-<span class="cstat-no" title="statement not covered" >        env = new engine.Environment(</span>
+<span class="cstat-no" title="statement not covered">      if (options.loader) {</span>
+<span class="cstat-no" title="statement not covered">        env = new engine.Environment(options.loader);</span>
+      } else <span class="cstat-no" title="statement not covered">if (options.settings &amp;&amp; options.settings.views) {</span>
+<span class="cstat-no" title="statement not covered">        env = new engine.Environment(</span>
           new engine.FileSystemLoader(options.settings.views)
         );
-      } else <span class="cstat-no" title="statement not covered" >if (options.nunjucks &amp;&amp; options.nunjucks.loader) {</span>
-<span class="cstat-no" title="statement not covered" >        if (typeof options.nunjucks.loader === 'string')</span>
-<span class="cstat-no" title="statement not covered" >          env = new engine.Environment(new engine.FileSystemLoader(options.nunjucks.loader));</span>
+      } else <span class="cstat-no" title="statement not covered">if (options.nunjucks &amp;&amp; options.nunjucks.loader) {</span>
+<span class="cstat-no" title="statement not covered">        if (typeof options.nunjucks.loader === 'string')</span>
+<span class="cstat-no" title="statement not covered">          env = new engine.Environment(new engine.FileSystemLoader(options.nunjucks.loader));</span>
         else
-<span class="cstat-no" title="statement not covered" >          env = new engine.Environment(</span>
+<span class="cstat-no" title="statement not covered">          env = new engine.Environment(</span>
             new engine.FileSystemLoader(
               options.nunjucks.loader[0],
               options.nunjucks.loader[1]
@@ -4357,10 +4355,10 @@ exports.nunjucks.render = <span class="fstat-no" title="function not covered" >f
           );
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      env.renderString(str, options, fn);</span>
+<span class="cstat-no" title="statement not covered">      env.renderString(str, options, fn);</span>
 &nbsp;
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      throw fn(err);</span>
+<span class="cstat-no" title="statement not covered">      throw fn(err);</span>
     }
   });
 };
@@ -4376,14 +4374,14 @@ exports.htmling = fromStringRenderer('htmling');
  * HTMLing string support.
  */
 &nbsp;
-exports.htmling.render = <span class="fstat-no" title="function not covered" >function(str, options, fn) {</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.htmling || (requires.htmling = require('htmling'));</span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine.string(str));</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, tmpl.render(options));</span>
+exports.htmling.render = <span class="fstat-no" title="function not covered">function(str, options, fn) {</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.htmling || (requires.htmling = require('htmling'));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine.string(str));</span>
+<span class="cstat-no" title="statement not covered">      fn(null, tmpl.render(options));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -4392,12 +4390,12 @@ exports.htmling.render = <span class="fstat-no" title="function not covered" >fu
 /**
  *  Rendering function
  */
-<span class="fstat-no" title="function not covered" >function requireReact(module, filename) {</span>
-<span class="cstat-no" title="statement not covered" >  var babel = requires.babel || (requires.babel = require('babel-core'));</span>
+<span class="fstat-no" title="function not covered">function requireReact(module, filename) {</span>
+<span class="cstat-no" title="statement not covered">  var babel = requires.babel || (requires.babel = require('babel-core'));</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  var compiled = babel.transformFileSync(filename, { presets: [ 'react' ] }).code</span>
+<span class="cstat-no" title="statement not covered">  var compiled = babel.transformFileSync(filename, { presets: [ 'react' ] }).code</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return module._compile(compiled, filename);</span>
+<span class="cstat-no" title="statement not covered">  return module._compile(compiled, filename);</span>
 }
 &nbsp;
 exports.requireReact = requireReact;
@@ -4406,45 +4404,45 @@ exports.requireReact = requireReact;
 /**
  *  Converting a string into a node module.
  */
-<span class="fstat-no" title="function not covered" >function requireReactString(src, filename) {</span>
-<span class="cstat-no" title="statement not covered" >  var babel = requires.babel || (requires.babel = require('babel-core'));</span>
+<span class="fstat-no" title="function not covered">function requireReactString(src, filename) {</span>
+<span class="cstat-no" title="statement not covered">  var babel = requires.babel || (requires.babel = require('babel-core'));</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!filename) <span class="cstat-no" title="statement not covered" >filename = '';</span></span>
-<span class="cstat-no" title="statement not covered" >  var m = new module.constructor();</span>
-<span class="cstat-no" title="statement not covered" >  filename = filename || '';</span>
+<span class="cstat-no" title="statement not covered">  if (!filename) <span class="cstat-no" title="statement not covered">filename = '';</span></span>
+<span class="cstat-no" title="statement not covered">  var m = new module.constructor();</span>
+<span class="cstat-no" title="statement not covered">  filename = filename ||&nbsp;'';</span>
 &nbsp;
   // Compile Using React
-<span class="cstat-no" title="statement not covered" >  var compiled = babel.transform(src, { presets: [ 'react' ] }).code;</span>
+<span class="cstat-no" title="statement not covered">  var compiled = babel.transform(src, { presets: [ 'react' ] }).code;</span>
 &nbsp;
   // Compile as a module
-<span class="cstat-no" title="statement not covered" >  m.paths = module.paths;</span>
-<span class="cstat-no" title="statement not covered" >  m._compile(compiled, filename);</span>
+<span class="cstat-no" title="statement not covered">  m.paths = module.paths;</span>
+<span class="cstat-no" title="statement not covered">  m._compile(compiled, filename);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return m.exports;</span>
+<span class="cstat-no" title="statement not covered">  return m.exports;</span>
 }
 &nbsp;
 &nbsp;
 /**
  * A naive helper to replace {{tags}} with options.tags content
  */
-<span class="fstat-no" title="function not covered" >function reactBaseTmpl(data, options){</span>
+<span class="fstat-no" title="function not covered">function reactBaseTmpl(data, options){</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  var exp;</span>
-<span class="cstat-no" title="statement not covered" >  var regex;</span>
+<span class="cstat-no" title="statement not covered">  var exp;</span>
+<span class="cstat-no" title="statement not covered">  var regex;</span>
 &nbsp;
   // Iterates through the keys in file object
   // and interpolate / replace {{key}} with it's value
-<span class="cstat-no" title="statement not covered" >  for (var k in options){</span>
-<span class="cstat-no" title="statement not covered" >    if (options.hasOwnProperty(k)){</span>
-<span class="cstat-no" title="statement not covered" >      exp = '{{' + k + '}}';</span>
-<span class="cstat-no" title="statement not covered" >      regex = new RegExp(exp, 'g');</span>
-<span class="cstat-no" title="statement not covered" >      if (data.match(regex)) {</span>
-<span class="cstat-no" title="statement not covered" >        data = data.replace(regex, options[k]);</span>
+<span class="cstat-no" title="statement not covered">  for (var k in options){</span>
+<span class="cstat-no" title="statement not covered">    if (options.hasOwnProperty(k)){</span>
+<span class="cstat-no" title="statement not covered">      exp = '{{' + k + '}}';</span>
+<span class="cstat-no" title="statement not covered">      regex = new RegExp(exp, 'g');</span>
+<span class="cstat-no" title="statement not covered">      if (data.match(regex)) {</span>
+<span class="cstat-no" title="statement not covered">        data = data.replace(regex, options[k]);</span>
       }
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return data;</span>
+<span class="cstat-no" title="statement not covered">  return data;</span>
 }
 &nbsp;
 &nbsp;
@@ -4454,7 +4452,7 @@ exports.requireReact = requireReact;
  */
 function reactRenderer(type){
 &nbsp;
-  <span class="missing-if-branch" title="else path not taken" >E</span>if (require.extensions) {
+  <span class="missing-if-branch" title="else path not taken">E</span>if (require.extensions) {
 &nbsp;
     // Ensure JSX is transformed on require
     if (!require.extensions['.jsx']) {
@@ -4470,59 +4468,59 @@ function reactRenderer(type){
   }
 &nbsp;
   // Return rendering fx
-  return <span class="fstat-no" title="function not covered" >function(str, options, fn) {</span>
-<span class="cstat-no" title="statement not covered" >    return promisify(fn, <span class="fstat-no" title="function not covered" >function(fn) {</span></span>
+  return <span class="fstat-no" title="function not covered">function(str, options, fn) {</span>
+<span class="cstat-no" title="statement not covered">    return promisify(fn, <span class="fstat-no" title="function not covered">function(fn) {</span></span>
       // React Import
-<span class="cstat-no" title="statement not covered" >      var ReactDOM = requires.ReactDOM || (requires.ReactDOM = require('react-dom/server'));</span>
-<span class="cstat-no" title="statement not covered" >      var react = requires.react || (requires.react = require('react'));</span>
+<span class="cstat-no" title="statement not covered">      var ReactDOM = requires.ReactDOM || (requires.ReactDOM = require('react-dom/server'));</span>
+<span class="cstat-no" title="statement not covered">      var react = requires.react || (requires.react = require('react'));</span>
 &nbsp;
       // Assign HTML Base
-<span class="cstat-no" title="statement not covered" >      var base = options.base;</span>
-<span class="cstat-no" title="statement not covered" >      delete options.base;</span>
+<span class="cstat-no" title="statement not covered">      var base = options.base;</span>
+<span class="cstat-no" title="statement not covered">      delete options.base;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      var enableCache = options.cache;</span>
-<span class="cstat-no" title="statement not covered" >      delete options.cache;</span>
+<span class="cstat-no" title="statement not covered">      var enableCache = options.cache;</span>
+<span class="cstat-no" title="statement not covered">      delete options.cache;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      var isNonStatic = options.isNonStatic;</span>
-<span class="cstat-no" title="statement not covered" >      delete options.isNonStatic;</span>
+<span class="cstat-no" title="statement not covered">      var isNonStatic = options.isNonStatic;</span>
+<span class="cstat-no" title="statement not covered">      delete options.isNonStatic;</span>
 &nbsp;
       // Start Conversion
-<span class="cstat-no" title="statement not covered" >      try {</span>
+<span class="cstat-no" title="statement not covered">      try {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        var Code;</span>
-<span class="cstat-no" title="statement not covered" >        var Factory;</span>
+<span class="cstat-no" title="statement not covered">        var Code;</span>
+<span class="cstat-no" title="statement not covered">        var Factory;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        var baseStr;</span>
-<span class="cstat-no" title="statement not covered" >        var content;</span>
-<span class="cstat-no" title="statement not covered" >        var parsed;</span>
+<span class="cstat-no" title="statement not covered">        var baseStr;</span>
+<span class="cstat-no" title="statement not covered">        var content;</span>
+<span class="cstat-no" title="statement not covered">        var parsed;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (!cache(options)){</span>
+<span class="cstat-no" title="statement not covered">        if (!cache(options)){</span>
           // Parsing
-<span class="cstat-no" title="statement not covered" >          Code = (type === 'path') ? require(resolve(str)) : requireReactString(str);</span>
-<span class="cstat-no" title="statement not covered" >          Factory = cache(options, react.createFactory(Code));</span>
+<span class="cstat-no" title="statement not covered">          Code = (type === 'path') ? require(resolve(str)) : requireReactString(str);</span>
+<span class="cstat-no" title="statement not covered">          Factory = cache(options, react.createFactory(Code));</span>
 &nbsp;
         } else {
-<span class="cstat-no" title="statement not covered" >          Factory = cache(options);</span>
+<span class="cstat-no" title="statement not covered">          Factory = cache(options);</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        parsed = new Factory(options);</span>
-<span class="cstat-no" title="statement not covered" >        content = (isNonStatic) ? ReactDOM.renderToString(parsed) : ReactDOM.renderToStaticMarkup(parsed);</span>
+<span class="cstat-no" title="statement not covered">        parsed = new Factory(options);</span>
+<span class="cstat-no" title="statement not covered">        content = (isNonStatic) ? ReactDOM.renderToString(parsed) : ReactDOM.renderToStaticMarkup(parsed);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (base){</span>
-<span class="cstat-no" title="statement not covered" >          baseStr = readCache[str] || fs.readFileSync(resolve(base), 'utf8');</span>
+<span class="cstat-no" title="statement not covered">        if (base){</span>
+<span class="cstat-no" title="statement not covered">          baseStr = readCache[str] || fs.readFileSync(resolve(base), 'utf8');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >          if (enableCache){</span>
-<span class="cstat-no" title="statement not covered" >            readCache[str] = baseStr;</span>
+<span class="cstat-no" title="statement not covered">          if (enableCache){</span>
+<span class="cstat-no" title="statement not covered">            readCache[str] = baseStr;</span>
           }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >          options.content = content;</span>
-<span class="cstat-no" title="statement not covered" >          content = reactBaseTmpl(baseStr, options);</span>
+<span class="cstat-no" title="statement not covered">          options.content = content;</span>
+<span class="cstat-no" title="statement not covered">          content = reactBaseTmpl(baseStr, options);</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        fn(null, content);</span>
+<span class="cstat-no" title="statement not covered">        fn(null, content);</span>
 &nbsp;
       } catch (err) {
-<span class="cstat-no" title="statement not covered" >        fn(err);</span>
+<span class="cstat-no" title="statement not covered">        fn(err);</span>
       }
     });
   };
@@ -4549,27 +4547,27 @@ exports['arc-templates'] = fromStringRenderer('arc-templates');
  * ARC-templates string support.
  */
 &nbsp;
-exports['arc-templates'].render = <span class="fstat-no" title="function not covered" >function(str, options, fn) {</span>
-<span class="cstat-no" title="statement not covered" >  var readFileWithOptions = Promise.promisify(read);</span>
-<span class="cstat-no" title="statement not covered" >  var consolidateFileSystem = {};</span>
-<span class="cstat-no" title="statement not covered" >  consolidateFileSystem.readFile = <span class="fstat-no" title="function not covered" >function (path) {</span></span>
-<span class="cstat-no" title="statement not covered" >    return readFileWithOptions(path, options);</span>
+exports['arc-templates'].render = <span class="fstat-no" title="function not covered">function(str, options, fn) {</span>
+<span class="cstat-no" title="statement not covered">  var readFileWithOptions = Promise.promisify(read);</span>
+<span class="cstat-no" title="statement not covered">  var consolidateFileSystem = {};</span>
+<span class="cstat-no" title="statement not covered">  consolidateFileSystem.readFile = <span class="fstat-no" title="function not covered">function (path) {</span></span>
+<span class="cstat-no" title="statement not covered">    return readFileWithOptions(path, options);</span>
   };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var engine = requires['arc-templates'];</span>
-<span class="cstat-no" title="statement not covered" >      if (!engine) {</span>
-<span class="cstat-no" title="statement not covered" >        var Engine = require('arc-templates/dist/es5');</span>
-<span class="cstat-no" title="statement not covered" >        engine = requires['arc-templates'] = new Engine({ filesystem: consolidateFileSystem });</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var engine = requires['arc-templates'];</span>
+<span class="cstat-no" title="statement not covered">      if (!engine) {</span>
+<span class="cstat-no" title="statement not covered">        var Engine = require('arc-templates/dist/es5');</span>
+<span class="cstat-no" title="statement not covered">        engine = requires['arc-templates'] = new Engine({ filesystem: consolidateFileSystem });</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      var compiler = cache(options) || cache(options, engine.compileString(str, options.filename));</span>
-<span class="cstat-no" title="statement not covered" >      compiler.then(<span class="fstat-no" title="function not covered" >function (func) {</span> <span class="cstat-no" title="statement not covered" >return func(options); </span>})</span>
-          .then(<span class="fstat-no" title="function not covered" >function (result) {</span> <span class="cstat-no" title="statement not covered" >fn(null, result.content); </span>})
+<span class="cstat-no" title="statement not covered">      var compiler = cache(options) || cache(options, engine.compileString(str, options.filename));</span>
+<span class="cstat-no" title="statement not covered">      compiler.then(<span class="fstat-no" title="function not covered">function (func) {</span> <span class="cstat-no" title="statement not covered">return func(options); </span>})</span>
+          .then(<span class="fstat-no" title="function not covered">function (result) {</span> <span class="cstat-no" title="statement not covered">fn(null, result.content); </span>})
           .catch(fn);
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -4582,24 +4580,24 @@ exports.vash = fromStringRenderer('vash');
 /**
  * Vash string support
  */
-exports.vash.render = <span class="fstat-no" title="function not covered" >function(str, options, fn) {</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function(fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.vash || (requires.vash = require('vash'));</span>
+exports.vash.render = <span class="fstat-no" title="function not covered">function(str, options, fn) {</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function(fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.vash || (requires.vash = require('vash'));</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
       // helper system : https://github.com/kirbysayshi/vash#helper-system
-<span class="cstat-no" title="statement not covered" >      if (options.helpers) {</span>
-<span class="cstat-no" title="statement not covered" >        for (var key in options.helpers) {</span>
-<span class="cstat-no" title="statement not covered" >          if (!options.helpers.hasOwnProperty(key) || typeof options.helpers[key] !== 'function') {</span>
-<span class="cstat-no" title="statement not covered" >            continue;</span>
+<span class="cstat-no" title="statement not covered">      if (options.helpers) {</span>
+<span class="cstat-no" title="statement not covered">        for (var key in options.helpers) {</span>
+<span class="cstat-no" title="statement not covered">          if (!options.helpers.hasOwnProperty(key) || typeof options.helpers[key] !== 'function') {</span>
+<span class="cstat-no" title="statement not covered">            continue;</span>
           }
-<span class="cstat-no" title="statement not covered" >          engine.helpers[key] = options.helpers[key];</span>
+<span class="cstat-no" title="statement not covered">          engine.helpers[key] = options.helpers[key];</span>
         }
       }
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine.compile(str, options));</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, tmpl(options).replace(/\n$/, ''));</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine.compile(str, options));</span>
+<span class="cstat-no" title="statement not covered">      fn(null, tmpl(options).replace(/\n$/, ''));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -4614,15 +4612,15 @@ exports.slm = fromStringRenderer('slm');
  * Slm string support.
  */
 &nbsp;
-exports.slm.render = <span class="fstat-no" title="function not covered" >function(str, options, fn) {</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.slm || (requires.slm = require('slm'));</span>
+exports.slm.render = <span class="fstat-no" title="function not covered">function(str, options, fn) {</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.slm || (requires.slm = require('slm'));</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine.compile(str, options));</span>
-<span class="cstat-no" title="statement not covered" >      fn(null, tmpl(options));</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine.compile(str, options));</span>
+<span class="cstat-no" title="statement not covered">      fn(null, tmpl(options));</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -4631,16 +4629,16 @@ exports.slm.render = <span class="fstat-no" title="function not covered" >functi
  * Marko support.
  */
 &nbsp;
-exports.marko = <span class="fstat-no" title="function not covered" >function(path, options, fn){</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.marko || (requires.marko = require('marko'));</span>
-<span class="cstat-no" title="statement not covered" >    options.writeToDisk = !!options.cache;</span>
+exports.marko = <span class="fstat-no" title="function not covered">function(path, options, fn){</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.marko || (requires.marko = require('marko'));</span>
+<span class="cstat-no" title="statement not covered">    options.writeToDisk = !!options.cache;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine.load(path, options));</span>
-<span class="cstat-no" title="statement not covered" >      tmpl.render(options, fn)</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine.load(path, options));</span>
+<span class="cstat-no" title="statement not covered">      tmpl.render(options, fn)</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -4649,16 +4647,16 @@ exports.marko = <span class="fstat-no" title="function not covered" >function(pa
  * Marko string support.
  */
 &nbsp;
-exports.marko.render = <span class="fstat-no" title="function not covered" >function(str, options, fn) {</span>
-<span class="cstat-no" title="statement not covered" >  return promisify(fn, <span class="fstat-no" title="function not covered" >function (fn) {</span></span>
-<span class="cstat-no" title="statement not covered" >    var engine = requires.marko || (requires.marko = require('marko'));</span>
-<span class="cstat-no" title="statement not covered" >    options.writeToDisk = !!options.cache;</span>
+exports.marko.render = <span class="fstat-no" title="function not covered">function(str, options, fn) {</span>
+<span class="cstat-no" title="statement not covered">  return promisify(fn, <span class="fstat-no" title="function not covered">function (fn) {</span></span>
+<span class="cstat-no" title="statement not covered">    var engine = requires.marko || (requires.marko = require('marko'));</span>
+<span class="cstat-no" title="statement not covered">    options.writeToDisk = !!options.cache;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    try {</span>
-<span class="cstat-no" title="statement not covered" >      var tmpl = cache(options) || cache(options, engine.load('string.marko', str, options));</span>
-<span class="cstat-no" title="statement not covered" >      tmpl.render(options, fn)</span>
+<span class="cstat-no" title="statement not covered">    try {</span>
+<span class="cstat-no" title="statement not covered">      var tmpl = cache(options) || cache(options, engine.load('string.marko', str, options));</span>
+<span class="cstat-no" title="statement not covered">      tmpl.render(options, fn)</span>
     } catch (err) {
-<span class="cstat-no" title="statement not covered" >      fn(err);</span>
+<span class="cstat-no" title="statement not covered">      fn(err);</span>
     }
   });
 };
@@ -4670,10 +4668,11 @@ exports.marko.render = <span class="fstat-no" title="function not covered" >func
 exports.requires = requires;
 &nbsp;
 &nbsp;</pre></td></tr>
-</table></pre>
+</tbody></table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 09:37:51 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Mon Apr 17 2017 15:35:11 GMT+0000 (UTC)</div>
 </div>
-</body>
-</html>
+
+
+</body></html>
