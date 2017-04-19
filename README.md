@@ -1,4 +1,7 @@
-# test coverage for  [consolidate (v0.14.5)](https://github.com/visionmedia/consolidate.js#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-consolidate.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-consolidate) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-consolidate.svg)](https://travis-ci.org/npmtest/node-npmtest-consolidate)
+# npmtest-consolidate
+
+#### test coverage for  [consolidate (v0.14.5)](https://github.com/visionmedia/consolidate.js#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-consolidate.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-consolidate) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-consolidate.svg)](https://travis-ci.org/npmtest/node-npmtest-consolidate)
+
 #### Template engine consolidation library
 
 [![NPM](https://nodei.co/npm/consolidate.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/consolidate)
